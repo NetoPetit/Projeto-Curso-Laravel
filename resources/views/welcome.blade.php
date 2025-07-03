@@ -4,35 +4,24 @@
 
 @section('content')
 
-
-    <h1>Titulo</h1>
-    <img src="/img/banner.jpg" alt="Banner" srcset="">
-    @if(10 > 15)
-        <p>teste de condição</p>
-    @endif
-    <p>{{ $nome }}</p>
-    @if($nome == "Neto")
-        <p>O nome da variável é Neto</p>
-    @else
-        <p>O nome da variável não é Neto é {{ $nome }} e ele tem {{ $idade }} anos de idade, e trabalha como {{ $profissao }} e tem {{ $altura }} de altura.</p>
-    @endif
-    @for($i = 0; $i < count($arr); $i++)
-        <p>{{ $arr[$i] }} - {{ $i }}</p>
-        @if($i == 2)
-            <p>O i é igual a 2</p>
-        @endif
-    @endfor
-    @foreach($nomes as $nome)
-        <p>{{ $loop->index }}</p>
-        <p>{{ $nome }}</p>
-        @if($nome == "Gabriel")
-            <p>Achei o {{ $nome }}</p>
-        @endif
-    @endforeach
-    @php
-        $name = 'João';
-        echo "$name";
-    @endphp
+    <div id="search-container" class="col-md-12">
+        <h1>Busque um evento</h1>
+        <form action="">
+            <input type="text" name="search" id="search" class="form-control" placeholder="Procurar">
+        </form>
+    </div>
+    <div id="events-container" class="col-md-12">
+        <h2>Próximos Eventos</h2>
+        <p>Veja os eventos dos próximos dias</p>
+        <div id="cards-containers" class="row">
+            @foreach ($events as $event)
+                <p>{{$event->title}} -- {{$event->description}}</p>
+                <div class="card-col-md-3">
+                    <img src="/img/event_placeholder.jpg" alt="{{$event->title}}">
+                </div>
+            @endforeach
+        </div>
+    </div>
     <!--Comentário do HTML exemplo visível-->
     {{--Comentário do Blade exemplo não visível--}}
 @endsection

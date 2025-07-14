@@ -200,6 +200,16 @@ header {
     margin-top: 30px;
 }
 
+/*Dashbord*/
+.dashboard-title-container {
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.dashboard-title-container th {
+    width: 25%;
+}
+
 /*footer*/
 footer {
     text-align: center;

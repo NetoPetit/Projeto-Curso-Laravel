@@ -80,4 +80,23 @@ class EventController extends Controller
 
         return view('events.dashboard', ['events' => $events]);
     }
+
+    public function destroy($id){
+
+        Event::findOrFail($id)->delete();
+
+        return redirect('/dashboard')->with('msg', 'Evento excluído com sucesso!');
+    }
+
+    //redirect() redireciona para uma URL, enquanto view() carrega uma pagina que pode contem junto um array de dados.
+    public function edit($id){
+
+        $event = Event::findOrFail($id);
+
+        return view('/events.edit', ['event' => $event]);
+    }
+
+    public function update($id){
+
+    }
 }

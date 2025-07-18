@@ -7,8 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Event extends Model
 {
     protected $casts = [
-        'items' => 'array'
+        'items' => 'array',
+        'date' => 'datetime'
     ];
+
+    protected $guarded = [];
 
     protected $dates = ['date'];
 

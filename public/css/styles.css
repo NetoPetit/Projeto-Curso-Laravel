@@ -41,6 +41,15 @@ header {
     text-align: center;
     padding: 10px;
 }
+
+#info-container .already-joined-msg {
+    margin: 15px;
+    color: #004085;
+    background-color: #CCE5ff;
+    border: 1px solid #B8DAFF;
+    padding: 10px;
+    width: 275px;
+}
 /*navbar*/
 #navbar img{
     width: 40px;
